@@ -1,0 +1,37 @@
+version: '3.3'
+services:
+
+  bitcoin-cash:
+    build: ./bitcoin-cash
+    restart: always
+    ports:
+      - 8332:8332
+    command: 
+      -regtest=1 
+      -rpcpassword=rpcpassword 
+      -rpcuser=rpcuser 
+      -rpcallowip=0.0.0.0/0
+
+  bitcoin:
+    build: ./bitcoin
+    restart: always
+    ports:
+      - 8332:8332
+    command: 
+      -regtest=1 
+      -rpcpassword=rpcpassword 
+      -rpcuser=rpcuser 
+      -rpcallowip=0.0.0.0/0
+      -rpcbind=0.0.0.0:8332
+
+  litecoin:
+    build: ./litecoin
+    restart: always
+    ports:
+      - 8332:8332
+    command: 
+      -regtest=1 
+      -rpcpassword=rpcpassword 
+      -rpcuser=rpcuser 
+      -rpcallowip=0.0.0.0/0
+      -rpcbind=0.0.0.0:8332
