@@ -35,3 +35,15 @@ services:
       -rpcuser=rpcuser 
       -rpcallowip=0.0.0.0/0
       -rpcbind=0.0.0.0:8332
+
+  dash:
+    build: ./dash
+    restart: always
+    ports:
+      - 8332:8332
+    command: 
+      -regtest=1 
+      -rpcpassword=rpcpassword 
+      -rpcuser=rpcuser 
+      -rpcallowip=0.0.0.0/0
+      -rpcbind=0.0.0.0:8332

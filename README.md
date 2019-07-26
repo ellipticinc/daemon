@@ -11,9 +11,9 @@ Table shows
 | Bitcoin | 0.17.x, 0.18.x | 0.18.0 |
 | Bitcoin Cash (ABC) | 0.19.x | 0.19.10 |
 | Litecoin | 0.17.x | 0.17.1 |
+| Dash | 0.14.x.x | 0.14.0.2 |
 | Monero | see monero branch |  |
 | Ethereum (parity) | coming soon |  |
-| Dash | coming soon |  |
 | Zcash | coming soon |  |
 
 The blockchain you want not supported? Create an issue and we'll get to it. Or, even better, make a pull request (see [contributing](/CONTRIBUTING.md))!
