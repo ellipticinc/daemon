@@ -4,8 +4,6 @@ At Elliptic, we use containers to run our blockchain daemons in a secure, reliab
 
 ## Supported Daemons
 
-Table shows
-
 | Network | Build Version (tested) | Docker Hub  |
 | ------------- | --------------| ------------|
 | Bitcoin | 0.17.x, 0.18.x | 0.18.0 |
