@@ -8,11 +8,11 @@ if [ $(echo "$1" | cut -c1) = "-" ]; then
 fi
 
 if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "dashd" ]; then
-	DATA_DIR=${DATA_DIR:-/home/daemon/.daemon}
+  DATA_DIR=${DATA_DIR:-/home/daemon/.daemon}
   mkdir -p "$DATA_DIR"
   chmod 700 "$DATA_DIR"
   chown -R daemon "$DATA_DIR"
-	mv /dash.conf $DATA_DIR/dash.conf
+  mv /dash.conf $DATA_DIR/dash.conf
 
   echo "$0: setting data directory to $DATA_DIR"
 

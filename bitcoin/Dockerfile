@@ -1,12 +1,12 @@
 FROM debian:stable-slim
 
 RUN apt-get update -y \
-	&& apt-get install -y curl gnupg gosu \
-	&& apt-get clean \
-	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  && apt-get install -y curl gnupg gosu \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV VERSION=0.18.0
-ENV PATH=/opt/bitcoin-${VERSION}/bin:$PATH
+ARG VERSION=0.18.0
+ARG PATH=/opt/bitcoin-${VERSION}/bin:$PATH
 
 RUN curl -SL https://bitcoin.org/laanwj-releases.asc | gpg --batch --import \
   && curl -SLO https://bitcoin.org/bin/bitcoin-core-${VERSION}/SHA256SUMS.asc \
