@@ -6,7 +6,7 @@ RUN apt-get update -y \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ARG VERSION=0.18.0
-ARG PATH=/opt/bitcoin-${VERSION}/bin:$PATH
+ENV PATH=/opt/bitcoin-${VERSION}/bin:$PATH
 
 RUN curl -SL https://bitcoin.org/laanwj-releases.asc | gpg --batch --import \
   && curl -SLO https://bitcoin.org/bin/bitcoin-core-${VERSION}/SHA256SUMS.asc \

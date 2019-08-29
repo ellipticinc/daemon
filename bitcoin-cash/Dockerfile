@@ -8,7 +8,7 @@ RUN apt-get update -y \
 ARG VERSION=0.19.10
 ARG DAEMON_FILE="bitcoin-abc-${VERSION}-x86_64-linux-gnu.tar.gz"
 ARG SHA256SUMS_ASC=jasonbcox-sha256sums.${VERSION}.asc
-ARG PATH=/opt/bitcoin-abc-${VERSION}/bin:$PATH
+ENV PATH=/opt/bitcoin-abc-${VERSION}/bin:$PATH
 
 RUN curl -SLO https://download.bitcoinabc.org/${VERSION}/${SHA256SUMS_ASC} \
   && curl -SLO https://download.bitcoinabc.org/${VERSION}/linux/${DAEMON_FILE} \

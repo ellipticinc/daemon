@@ -11,7 +11,7 @@ RUN gpg --keyserver "pgp.mit.edu" --recv-keys FE3348877809386C
 ARG VERSION=0.17.1
 ARG DAEMON_FILE=litecoin-${VERSION}-x86_64-linux-gnu.tar.gz 
 ARG SHA256SUMS_ASC=litecoin-${VERSION}-linux-signatures.asc
-ARG PATH=/opt/bitcoin-abc-${VERSION}/bin:$PATH
+ENV PATH=/opt/bitcoin-abc-${VERSION}/bin:$PATH
 
 RUN curl -SLO https://download.litecoin.org/litecoin-${VERSION}/linux/${SHA256SUMS_ASC} \
   && curl -O https://download.litecoin.org/litecoin-${VERSION}/linux/${DAEMON_FILE} \

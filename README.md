@@ -6,8 +6,8 @@ At Elliptic, we use containers to run our blockchain daemons in a secure, reliab
 
 | Network | Build Version (tested) | Docker Hub  |
 | ------------- | --------------| ------------|
-| Bitcoin | 0.17.x, 0.18.x | 0.18.0 |
-| Bitcoin Cash (ABC) | 0.19.x | 0.19.10 |
+| Bitcoin | 0.17.x, 0.18.x | 0.18.0, 0.18.1 |
+| Bitcoin Cash (ABC) | 0.19.x | 0.19.8, 0.19.10 |
 | Litecoin | 0.17.x | 0.17.1 |
 | Dash | 0.14.x.x | 0.14.0.2 |
 | Monero | see monero branch |  |

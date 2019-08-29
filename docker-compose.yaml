@@ -2,7 +2,12 @@ version: '3.3'
 services:
 
   bitcoin-cash:
-    build: ./bitcoin-cash
+    build: 
+      context: ./bitcoin-cash
+      args:
+        - VERSION=0.19.9
+    volumes:
+      - "./test:/home/daemon/.daemon"
     restart: always
     ports:
       - 8332:8332
