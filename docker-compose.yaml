@@ -2,7 +2,12 @@ version: '3.3'
 services:
 
   bitcoin-cash:
-    build: ./bitcoin-cash
+    build: 
+      context: ./bitcoin-cash
+      args:
+        - VERSION=0.19.9
+    volumes:
+      - "./test:/home/daemon/.daemon"
     restart: always
     ports:
       - 8332:8332
@@ -13,7 +18,10 @@ services:
       -rpcallowip=0.0.0.0/0
 
   bitcoin:
-    build: ./bitcoin
+    build:
+      context: ./bitcoin
+      args:
+        - VERSION=0.18.1
     restart: always
     ports:
       - 8332:8332
@@ -26,6 +34,20 @@ services:
 
   litecoin:
     build: ./litecoin
+    restart: always
+    ports:
+      - 8332:8332
+    volumes:
+      - "./test:/home/daemon/.daemon"
+    command: 
+      -regtest=1 
+      -rpcpassword=rpcpassword 
+      -rpcuser=rpcuser 
+      -rpcallowip=0.0.0.0/0
+      -rpcbind=0.0.0.0:8332
+
+  dash:
+    build: ./dash
     restart: always
     ports:
       - 8332:8332

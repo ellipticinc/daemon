@@ -12,7 +12,7 @@ if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "litecoind" ]; then
   mkdir -p "$DATA_DIR"
   chmod 700 "$DATA_DIR"
   chown -R daemon "$DATA_DIR"
-	mv /litecoin.conf $DATA_DIR/litecoin.conf
+	cp /litecoin.conf $DATA_DIR/litecoin.conf
 
   echo "$0: setting data directory to $DATA_DIR"
 

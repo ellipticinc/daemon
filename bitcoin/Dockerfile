@@ -1,11 +1,11 @@
 FROM debian:stable-slim
 
 RUN apt-get update -y \
-	&& apt-get install -y curl gnupg gosu \
-	&& apt-get clean \
-	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  && apt-get install -y curl gnupg gosu \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV VERSION=0.18.0
+ARG VERSION=0.18.0
 ENV PATH=/opt/bitcoin-${VERSION}/bin:$PATH
 
 RUN curl -SL https://bitcoin.org/laanwj-releases.asc | gpg --batch --import \
