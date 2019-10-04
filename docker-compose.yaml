@@ -37,6 +37,8 @@ services:
     restart: always
     ports:
       - 8332:8332
+    volumes:
+      - "./test:/home/daemon/.daemon"
     command: 
       -regtest=1 
       -rpcpassword=rpcpassword 
