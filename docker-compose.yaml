@@ -68,3 +68,9 @@ services:
       --rpc-bind-ip=0.0.0.0
       --confirm-external-bind
 
+  parity:
+    build: ./parity
+    restart: always
+    ports:
+      - 8332:8332
+
