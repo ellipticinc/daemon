@@ -9,7 +9,6 @@ RUN apt-get update -y \
 ARG VERSION=0.14.0.3
 ARG DAEMON_FILE=dashcore-${VERSION}-x86_64-linux-gnu.tar.gz 
 ARG SHA256SUMS_ASC=SHA256SUMS.asc
-ENV PATH=/opt/bitcoin-abc-${VERSION}/bin:$PATH
 
 RUN curl -SLO https://github.com/dashpay/dash/releases/download/v${VERSION}/${SHA256SUMS_ASC} \
   && curl -SLO https://github.com/dashpay/dash/releases/download/v${VERSION}/${DAEMON_FILE} \

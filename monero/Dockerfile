@@ -8,18 +8,22 @@ RUN useradd -r monero \
   && set -ex
 
 ARG VERSION=0.14.1.2
-ARG DAEMON_FILE=monero-linux-x64-v$VERSION.tar.bz2
-ARG PATH=/opt/bitcoin-abc-${VERSION}/bin:$PATH
+ARG DAEMON_FILE=monero-linux-x64-v${VERSION}.tar.bz2
 
-RUN curl -SLO -o /hashes.asc https://getmonero.org/downloads/hashes.txt \
-	&& curl -SLO https://downloads.getmonero.org/cli/monero-linux-x64-v${VERSION}.tar.bz2 \
-  && grep " ${DAEMON_FILE}\$" hashes.asc | sha256sum -c - \
-  && tar --strip=2 -xjvf *.tar.bz2 -C /usr/local/bin \
+# copy of fluffypony key found in /utils/gpg_keys of monero project
+COPY fluffypony.asc /fluffypony.asc
+
+RUN curl -SLO https://getmonero.org/downloads/hashes.txt \
+  && curl -SLO https://downloads.getmonero.org/cli/monero-linux-x64-v${VERSION}.tar.bz2 \
+  && gpg --import fluffypony.asc \
+  && gpg --verify hashes.txt \
+  && cat hashes.txt | grep "^${DAEMON_FILE}" | cut -f2 -d" " | xargs -I{} echo "{}  ${DAEMON_FILE}" | sha256sum -c - \
+  && tar -xzvf *.tar.bz2 -C /usr/local/bin \
   && rm *.tar.bz2
 
+ENV PATH=/usr/local/bin/monero-x86_64-linux-gnu:$PATH
 COPY docker-entrypoint.sh /entrypoint.sh
-
-EXPOSE 18080 18081
+COPY bitmonero.conf /bitmonero.conf
 
 ENTRYPOINT ["sh", "/entrypoint.sh"]
 

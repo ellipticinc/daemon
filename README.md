@@ -10,7 +10,7 @@ At Elliptic, we use containers to run our blockchain daemons in a secure, reliab
 | Bitcoin Cash (ABC) | 0.19.x | 0.19.8, 0.19.9, 0.19.10 |
 | Litecoin | 0.17.x | 0.17.1 |
 | Dash | 0.14.x.x | 0.14.0.2, 0.14.0.3 |
-| Monero | see monero branch |  |
+| Monero | 0.14.1.2 | 0.14.1.2 |
 | Zilliqa | coming soon |   |
 | Zcash | coming soon |  |
 | Ethereum (parity) | No need (see https://wiki.parity.io/Docker#pick-a-container) |  |
