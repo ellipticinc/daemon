@@ -57,3 +57,14 @@ services:
       -rpcuser=rpcuser 
       -rpcallowip=0.0.0.0/0
       -rpcbind=0.0.0.0:8332
+
+  monero:
+    build: ./monero
+    restart: always
+    ports:
+      - 8332:8332
+    command: 
+      --regtest
+      --rpc-bind-ip=0.0.0.0
+      --confirm-external-bind
+
