@@ -4,7 +4,7 @@ At Elliptic, we use containers to run our blockchain daemons in a secure, reliab
 
 ## Supported Daemons
 
-| Network | Build Version (tested) | Docker Hub  | Arguement Docs (cli docs where no good online ones) |
+| Network | Build Version (tested) | Docker Hub  | (Best) docs for commandline args |
 | ------------- | --------------| ------------| ------------| 
 | Bitcoin | 0.17.x, 0.18.x | 0.18.0, 0.18.1 | ```docker run elliptic/bitcoin bitcoind -?``` |
 | Bitcoin Cash (ABC) | 0.19.x | 0.19.8, 0.19.9, 0.19.10 | ```docker run ellitpic/bitcoin-cash bitcoind -?``` |
