@@ -2,12 +2,21 @@ ARG VERSION=v2.5.9-stable
 
 FROM parity/parity:$VERSION
 
-#COPY docker-entrypoint.sh /entrypoint.sh
-#COPY bitcoin.conf /bitcoin.conf
+USER root
+RUN apt-get update -y \
+  && apt-get install -y curl gnupg gosu bzip2 \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+  && set -ex
 
-#EXPOSE 8332 8333
+COPY docker-entrypoint.sh /entrypoint.sh
+COPY config.toml /config.toml
 
-#ENTRYPOINT ["sh", "/entrypoint.sh"]
+RUN mkdir -p /home/daemon/.daemon
+RUN chmod 700 /home/daemon/.daemon
+RUN chown -R daemon /home/daemon/.daemon
 
-#CMD ["bitcoind"]
+ENTRYPOINT ["sh", "/entrypoint.sh"]
+
+CMD ["parity"]
 

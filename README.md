@@ -11,9 +11,9 @@ At Elliptic, we use containers to run our blockchain daemons in a secure, reliab
 | Litecoin | 0.17.x | 0.17.1 |
 | Dash | 0.14.x.x | 0.14.0.2, 0.14.0.3 |
 | Monero | 0.14.1.2 | 0.14.1.2 |
+| Parity (Ethereum) | 2.5.9-stable | 2.5.9-stable |
 | Zilliqa | coming soon |   |
 | Zcash | coming soon |  |
-| Ethereum (parity) | No need (see https://wiki.parity.io/Docker#pick-a-container) |  |
 
 The blockchain you want not supported? Create an issue and we'll get to it. Or, even better, make a pull request (see [contributing](/CONTRIBUTING.md))!
 
