@@ -2,12 +2,12 @@
 set -e
 
 if [ $(echo "$1" | cut -c1) = "-" ]; then
-  echo "$0: assuming arguments for monerod"
+  echo "$0: assuming arguments for parity"
 
-  set -- monerod "$@"
+  set -- parity "$@"
 fi
 
-if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "monerod" ]; then
+if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "parity" ]; then
   DATA_DIR=${DATA_DIR:-/home/daemon/.daemon}
   mkdir -p "$DATA_DIR"
   chmod 700 "$DATA_DIR"
@@ -15,10 +15,10 @@ if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "monerod" ]; then
 
   echo "$0: setting data directory to $DATA_DIR"
 
-  set -- "$@" --data-dir="$DATA_DIR" --non-interactive --config-file="/bitmonero.conf"
+  set -- "$@" --config=/config.toml --base-path="$DATA_DIR"
 fi
 
-if [ "$1" = "monerod" ]; then
+if [ "$1" = "parity" ]; then
   echo
   exec gosu daemon "$@"
 fi

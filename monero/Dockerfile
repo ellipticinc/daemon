@@ -1,7 +1,6 @@
 FROM debian:stable-slim
 
-RUN useradd -r monero \
-  && apt-get update -y \
+RUN apt-get update -y \
   && apt-get install -y curl gnupg gosu bzip2 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \

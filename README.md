@@ -4,16 +4,16 @@ At Elliptic, we use containers to run our blockchain daemons in a secure, reliab
 
 ## Supported Daemons
 
-| Network | Build Version (tested) | Docker Hub  |
-| ------------- | --------------| ------------|
-| Bitcoin | 0.17.x, 0.18.x | 0.18.0, 0.18.1 |
-| Bitcoin Cash (ABC) | 0.19.x | 0.19.8, 0.19.9, 0.19.10 |
-| Litecoin | 0.17.x | 0.17.1 |
-| Dash | 0.14.x.x | 0.14.0.2, 0.14.0.3 |
-| Monero | 0.14.1.2 | 0.14.1.2 |
+| Network | Build Version (tested) | Docker Hub  | (Best) docs for commandline args |
+| ------------- | --------------| ------------| ------------| 
+| Bitcoin | 0.17.x, 0.18.x | 0.18.0, 0.18.1 | ```docker run elliptic/bitcoin bitcoind -?``` |
+| Bitcoin Cash (ABC) | 0.19.x | 0.19.8, 0.19.9, 0.19.10 | ```docker run ellitpic/bitcoin-cash bitcoind -?``` |
+| Litecoin | 0.17.x | 0.17.1 | ```docker run elliptic/litecoin litecoind -?``` |
+| Dash | 0.14.x.x | 0.14.0.2, 0.14.0.3 | [Dash Docs](https://docs.dash.org/en/stable/wallets/dashcore/cmd-rpc.html) |
+| Monero | 0.14.1.2 | 0.14.1.2 | [Monero Docs](https://monerodocs.org/interacting/monerod-reference/) |
+| Parity (Ethereum) | 2.5.9-stable | 2.5.9-stable | ```docker run elliptic/parity parity --help``` |
 | Zilliqa | coming soon |   |
 | Zcash | coming soon |  |
-| Ethereum (parity) | No need (see https://wiki.parity.io/Docker#pick-a-container) |  |
 
 The blockchain you want not supported? Create an issue and we'll get to it. Or, even better, make a pull request (see [contributing](/CONTRIBUTING.md))!
 
