@@ -1,6 +1,6 @@
-ARG VERSION=v2.5.9-stable
+ARG VERSION=2.5.9-stable
 
-FROM parity/parity:$VERSION
+FROM parity/parity:v$VERSION
 
 USER root
 RUN apt-get update -y \
