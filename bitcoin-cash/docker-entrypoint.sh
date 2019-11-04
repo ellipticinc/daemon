@@ -12,11 +12,10 @@ if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "bitcoind" ]; then
   mkdir -p "$DATA_DIR"
   chmod 700 "$DATA_DIR"
   chown -R daemon "$DATA_DIR"
-	cp /bitcoin.conf $DATA_DIR/bitcoin.conf
 
   echo "$0: setting data directory to $DATA_DIR"
 
-  set -- "$@" -datadir="$DATA_DIR"
+  set -- "$@" -datadir="$DATA_DIR" -conf=/bitcoin.conf
 fi
 
 if [ "$1" = "bitcoind" ] || [ "$1" = "bitcoin-cli" ] || [ "$1" = "bitcoin-tx" ]; then
