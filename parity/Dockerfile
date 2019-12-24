@@ -1,4 +1,4 @@
-ARG VERSION=v2.5.10-stable
+ARG VERSION=v2.5.12-stable
 
 FROM parity/parity:$VERSION
 
