@@ -5,7 +5,7 @@ RUN apt-get update -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ARG VERSION=0.18.0
+ARG VERSION=0.19.0.1
 ENV PATH=/opt/bitcoin-${VERSION}/bin:$PATH
 
 RUN curl -SL https://bitcoin.org/laanwj-releases.asc | gpg --batch --import \
@@ -17,7 +17,6 @@ RUN curl -SL https://bitcoin.org/laanwj-releases.asc | gpg --batch --import \
   && rm *.tar.gz *.asc
 
 COPY docker-entrypoint.sh /entrypoint.sh
-COPY bitcoin.conf /bitcoin.conf
 
 EXPOSE 8332 8333
 
