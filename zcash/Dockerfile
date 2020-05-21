@@ -2,6 +2,8 @@ FROM zcashfr/zcash
 
 USER root
 
+RUN usermod -aG sudo zcash
+
 ENV ZCASH_CONF=/home/daemon/.daemon/zcash.conf
 ENV DATA_DIR=/home/daemon/.daemon
 
