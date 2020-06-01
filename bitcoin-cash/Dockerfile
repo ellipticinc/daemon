@@ -5,7 +5,7 @@ RUN apt-get update -y \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ARG VERSION=0.20.6
+ARG VERSION=0.21.7
 ARG DAEMON_FILE="bitcoin-abc-${VERSION}-x86_64-linux-gnu.tar.gz"
 ARG SHA256SUMS_ASC=jasonbcox-sha256sums.${VERSION}.asc
 ENV PATH=/opt/bitcoin-abc-${VERSION}/bin:$PATH
